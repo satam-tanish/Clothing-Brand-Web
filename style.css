@@ -1,66 +1,163 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f9f5ef;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: #7a1f1f;
+  --secondary: #f5d08a;
+  --bg: #faf7f2;
+  --card: rgba(255,255,255,0.85);
+  --shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: #333;
+}
+
+/* ---------- NAVBAR ---------- */
 header {
-  background: maroon;
-  color: white;
-  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 nav a {
-  color: white;
-  margin-left: 15px;
+  margin-left: 20px;
   text-decoration: none;
+  color: #444;
+  font-weight: 500;
 }
 
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ---------- HERO ---------- */
 .hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #f7e7c1, #fff);
   text-align: center;
-  padding: 80px;
-  background: linear-gradient(#f5d08a, white);
 }
 
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* ---------- BUTTON ---------- */
 .btn {
-  background: maroon;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: var(--primary);
   color: white;
-  padding: 10px 20px;
   border: none;
-  text-decoration: none;
+  border-radius: 30px;
   cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
 }
 
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(122,31,31,0.3);
+}
+
+/* ---------- GRID ---------- */
 .grid {
+  padding: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
+/* ---------- PRODUCT CARD ---------- */
 .product {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
   text-align: center;
+}
+
+.product:hover {
+  transform: translateY(-8px);
 }
 
 .product img {
   width: 100%;
-  height: 180px;
+  height: 220px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
-.center {
-  text-align: center;
+.product h3 {
+  margin: 15px 0 5px;
 }
 
+.product p {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ---------- FORM ---------- */
 .form {
-  max-width: 400px;
-  margin: auto;
+  max-width: 420px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+}
+
+/* ---------- CENTER ---------- */
+.center {
+  text-align: center;
+  padding: 30px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  margin-top: 60px;
+  box-shadow: var(--shadow);
 }
