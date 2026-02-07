@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Success | Shivsakti</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="center">
+
+<h2>Order Confirmed 🎉</h2>
+<div id="invoice"></div>
+<button class="btn" onclick="window.print()">Print Invoice</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+let div = document.getElementById("invoice");
+
+cart.forEach(i => {
+  total += i.price * i.qty;
+  div.innerHTML += `<p>${i.name} × ${i.qty} = ₹${i.price * i.qty}</p>`;
+});
+
+div.innerHTML += `<h3>Total: ₹${total}</h3>`;
+localStorage.removeItem("cart");
+</script>
+
+</body>
+</html>
