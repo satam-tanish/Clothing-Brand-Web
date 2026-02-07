@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Admin | Shivsakti</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/app.js"></script>
-</head>
 <body onload="loadAdmin()">
 
-<h2 class="center">Admin Panel</h2>
+<header>
+  <h1>Shivsakti Admin</h1>
+  <nav>
+    <a href="index.html">Store</a>
+    <a href="shop.html">Shop</a>
+  </nav>
+</header>
+
+<section class="center">
+  <h2>Product Management</h2>
+</section>
 
 <div class="form">
   <input id="pname" placeholder="Product Name">
@@ -20,7 +23,6 @@
   <button class="btn" onclick="addProduct()">Add Product</button>
 </div>
 
-<div id="adminProducts" class="center"></div>
+<div class="grid" id="adminProducts"></div>
 
 </body>
-</html>
